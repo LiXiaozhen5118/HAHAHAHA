@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你是最棒的!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #message {
+            font-size: 24px;
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="message"></div>
+
+    <script>
+        const messages = ["你是大帅哥", "你是大美女"];
+        let index = 0;
+
+        function changeMessage() {
+            document.getElementById("message").textContent = messages[index];
+            index = (index + 1) % messages.length;
+        }
+
+        setInterval(changeMessage, 2000); // 每2秒切换一次消息
+        changeMessage(); // 立即显示第一条消息
+    </script>
+</body>
+</html>
